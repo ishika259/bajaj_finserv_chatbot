@@ -11,12 +11,12 @@ st.title("🤖 Bajaj Finserv Smart Chatbot")
 query = st.text_input("Ask your question")
 
 if query:
-if "price" in query.lower() or "stock" in query.lower():
-   response = handle_stock_query(query)
-elif "cfo" in query.lower():
-   response = generate_cfo_comment(query)
-else:
-   response = answer_question(query)
+   if "price" in query.lower() or "stock" in query.lower():
+      response = handle_stock_query(query)
+   elif "cfo" in query.lower():
+      response = generate_cfo_comment(query)
+   else:
+      response = answer_question(query)
 st.markdown(response)
 
 
